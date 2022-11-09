@@ -12,7 +12,7 @@ JWKS_URI | https://www.googleapis.com/oauth2/v3/certs
 npm run create-db
 ```
 
-### Start api
+## Start api
 ```
 npm run start
 ```
