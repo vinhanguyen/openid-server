@@ -1,4 +1,5 @@
 # openid-server
+Express app with JWT authentication using custom Passport strategy. 
 
 ## Set env vars
 Name | Value
