@@ -7,6 +7,7 @@ Name | Value
 ISSUER | https://accounts.google.com
 CLIENT_ID | your client id
 JWKS_URI | https://www.googleapis.com/oauth2/v3/certs
+DB_FILE | path/to/sqlite.db
 
 ## Create db
 ```

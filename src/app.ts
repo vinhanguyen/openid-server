@@ -2,7 +2,7 @@ import express from 'express';
 import { router } from './router';
 import cors from 'cors';
 import passport from 'passport';
-import { buildStrategy } from './strategy';
+import { jwtStrategy } from './auth/jwt-strategy';
 
 const issuer = process.env.ISSUER;
 const client_id = process.env.CLIENT_ID;
@@ -12,7 +12,7 @@ if (!(issuer && client_id && jwks_uri)) {
   throw 'Missing ISSUER, CLIENT_ID, JWKS_URI env vars';
 }
 
-passport.use(buildStrategy(issuer, client_id, jwks_uri));
+passport.use(jwtStrategy(issuer, client_id, jwks_uri));
 
 const app = express();
 const port = process.env.PORT;

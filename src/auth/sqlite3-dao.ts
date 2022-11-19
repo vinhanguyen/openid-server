@@ -1,6 +1,7 @@
 import { Database, OPEN_READWRITE, OPEN_FULLMUTEX } from "sqlite3";
 
-const filename = 'users.db';
+const filename = process.env.DB_FILE || 'sqlite.db';
+
 const mode = OPEN_READWRITE | OPEN_FULLMUTEX;
 
 export function getFederatedCredential(provider: string, subject: string) {

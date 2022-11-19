@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "create-db": "rm users.db && sqlite3 users.db < users.sql",
+    "create-db": "sqlite3 $DB_FILE < sql/users.sql",
     "start": "rm -rf dist && tsc && node ./dist/app.js"
   },
   "author": "",
