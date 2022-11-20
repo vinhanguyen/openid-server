@@ -20,14 +20,14 @@ export function getFederatedCredential(provider: string, subject: string) {
   });
 }
 
-export function createUser(name: string) {
+export function createUser(email: any) {
   return new Promise((resolve, reject) => {
-    pool.query('INSERT INTO users (name) VALUES (?)', [name], (error, {insertId: id}) => {
+    pool.query('INSERT INTO users (email) VALUES (?)', [email], (error, {insertId: id}) => {
       if (error) {
         reject(error);
         return;
       }
-      resolve({id, name});
+      resolve({id, email});
     });
   });
 }

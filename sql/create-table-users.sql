@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(100)
+  email VARCHAR(100)
 );
 
 CREATE TABLE federated_credentials (

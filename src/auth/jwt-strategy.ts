@@ -27,16 +27,16 @@ export function jwtStrategy(issuer: string, audience: string, jwks_uri: string) 
 
         // get user
         try {
-          const {iss = null, sub = null, name = null} = payload;
+          const {iss = null, sub = null, email = null} = payload;
   
-          if (!(iss && sub && name)) {
+          if (!(iss && sub && email)) {
             return done('Missing payload');
           }
   
           const cred: any = await getFederatedCredential(iss, sub);
 
           if (!cred) {
-            const user: any = await createUser(<string>name);
+            const user: any = await createUser(email);
             await createFederatedCredential(user.id, iss, sub);
             return done(null, user);
           } else {
