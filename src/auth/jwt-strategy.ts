@@ -1,6 +1,6 @@
 import { createRemoteJWKSet, jwtVerify } from "jose";
 import { Strategy } from "passport-custom";
-import { createFederatedCredential, createUser, getFederatedCredential, getUser } from "./sqlite3-dao";
+import { createFederatedCredential, createUser, getFederatedCredential, getUser } from "./dao";
 
 export function jwtStrategy(issuer: string, audience: string, jwks_uri: string) {
   const JWKS = createRemoteJWKSet(new URL(jwks_uri));
