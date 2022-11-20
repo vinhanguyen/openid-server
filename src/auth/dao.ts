@@ -1,6 +1,6 @@
 import { createPool } from 'mysql';
 
-var pool = createPool({
+const pool = createPool({
   connectionLimit : 10,
   host            : process.env.MYSQL_HOST,
   user            : process.env.MYSQL_USER,
