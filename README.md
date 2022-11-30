@@ -17,7 +17,7 @@ MYSQL_DATABASE | your mysql database name
 npm run build-db
 ```
 
-## Insert user
+## Add authorized users
 ```
 INSERT INTO users (email) VALUES ('vinh.a.nguyen@gmail.com');
 ```
