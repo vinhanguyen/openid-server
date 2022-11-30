@@ -12,5 +12,3 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   email VARCHAR(255) NOT NULL PRIMARY KEY
 );
-
-INSERT INTO users (email) VALUES ('vinh.a.nguyen@gmail.com');

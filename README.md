@@ -17,6 +17,11 @@ MYSQL_DATABASE | your mysql database name
 npm run build-db
 ```
 
+## Insert user
+```
+INSERT INTO users (email) VALUES ('vinh.a.nguyen@gmail.com');
+```
+
 ## Start api
 ```
 npm run start
