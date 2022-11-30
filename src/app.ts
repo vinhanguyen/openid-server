@@ -1,8 +1,8 @@
-import express from 'express';
+import express, {} from 'express';
 import { router } from './router';
 import cors from 'cors';
 import passport from 'passport';
-import { jwtStrategy } from './auth/jwt-strategy';
+import { jwtStrategy } from './auth/strategy';
 
 const issuer = process.env.ISSUER;
 const client_id = process.env.CLIENT_ID;
@@ -19,7 +19,7 @@ const port = process.env.PORT;
 
 app.use(cors());
 
-app.use('/', passport.authenticate('custom', { session: false }), router);
+app.use('/', passport.authenticate('jwt', { session: false }), router);
 
 app.listen(port, () => {
   console.log(`openid-server listening at http://localhost:${port}`);
