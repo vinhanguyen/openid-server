@@ -1,4 +1,3 @@
-import { Request } from "express";
 import { decode } from 'jsonwebtoken';
 import JwksClient, { SigningKey } from "jwks-rsa";
 import { ExtractJwt, Strategy, StrategyOptions } from "passport-jwt";
@@ -14,7 +13,7 @@ export function jwtStrategy(issuer: string, audience: string, jwksUri: string) {
     audience
   };
   
-  opts.secretOrKeyProvider = async (request: Request, rawJwtToken: any, done: (err: any, secretOrKey?: string | Buffer) => void) => {
+  opts.secretOrKeyProvider = async (request, rawJwtToken, done) => {
     const {header: {kid}}: any = decode(rawJwtToken, {complete: true});
 
     const found = keyCache.find(({kid: cacheKid}) => cacheKid === kid);
