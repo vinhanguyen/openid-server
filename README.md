@@ -7,6 +7,7 @@ Name | Value
 ISSUER | https://accounts.google.com
 CLIENT_ID | your client id
 JWKS_URI | https://www.googleapis.com/oauth2/v3/certs
+EXPRESS_PORT | port express listens on
 MYSQL_HOST | your mysql host
 MYSQL_USER | your mysql user
 MYSQL_PASSWORD | your mysql password

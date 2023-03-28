@@ -15,7 +15,7 @@ if (!(issuer && client_id && jwks_uri)) {
 passport.use(jwtStrategy(issuer, client_id, jwks_uri));
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.EXPRESS_PORT;
 
 app.use(cors());
 
